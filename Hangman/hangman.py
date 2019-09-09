@@ -2,19 +2,37 @@
 # Hangman Game
 # Due Sept 20
 
-import sys
-import time
-import random
+import sys      # for exit
+import time     # for sleep
+import random   # for random choice
 
 def play(words):
 
     word = random.choice(words)
+    fails = 0
+    correctGuesses = ''
 
     printTitle()
-    fails = 6 
-    printGallow(fails, word)
-
+    print('_ ' * (len(word) - 1))
     print(word)
+
+    while True:
+        guess = input('\nGuess a letter: ').upper()
+        if guess in word:
+            correctGuesses = correctGuesses + guess
+            win = True
+            printGallow(fails, word)
+            for i in range(len(word) - 1):
+                if word[i] not in correctGuesses:
+                    win = False
+                    print('_ ', end = '')
+                else:
+                    print(word[i] + ' ', end = '')
+            if win == True:
+                winner(word)
+        else:
+            fails += 1
+            printGallow(fails, word)
 
 def printTitle():
     print(' _   _ ')
@@ -39,8 +57,8 @@ def printGallow(fails, word):
         print('_______________________ ')
         print('| _____________________|')
         print('| |  /      | |         ')
-        print('| | /       (_)         ')
-        print('| |/                    ')
+        print('| | /       / \         ')
+        print('| |/       (___)        ')
         print('| |                     ')
         print('| |                     ')
         print('| |                     ')
@@ -52,7 +70,7 @@ def printGallow(fails, word):
         print('_______________________ ')
         print('| _____________________|')
         print('| |  /      | |         ')
-        print('| | /      ( ツ )         ')
+        print('| | /     ( 0o0 )         ')
         print('| |/                    ')
         print('| |                     ')
         print('| |                     ')
@@ -65,7 +83,7 @@ def printGallow(fails, word):
         print('_______________________ ')
         print('| _____________________|')
         print('| |  /      | |         ')
-        print('| | /      ( ツ )         ')
+        print('| | /     ( 0o0 )         ')
         print('| |/         |           ')
         print('| |          |           ')
         print('| |          |           ')
@@ -78,7 +96,7 @@ def printGallow(fails, word):
         print('_______________________ ')
         print('| _____________________|')
         print('| |  /      | |         ')
-        print('| | /      ( ツ )         ')
+        print('| | /     ( 0o0 )         ')
         print('| |/         |           ')
         print('| |         /|           ')
         print('| |        / |           ')
@@ -91,7 +109,7 @@ def printGallow(fails, word):
         print('_______________________ ')
         print('| _____________________|')
         print('| |  /      | |         ')
-        print('| | /      ( ツ )         ')
+        print('| | /     ( 0o0 )         ')
         print('| |/         |           ')
         print('| |         /|\           ')
         print('| |        / | \         ')
@@ -104,7 +122,7 @@ def printGallow(fails, word):
         print('_______________________ ')
         print('| _____________________|')
         print('| |  /      | |         ')
-        print('| | /      ( ツ )         ')
+        print('| | /     ( 0o0 )         ')
         print('| |/         |           ')
         print('| |         /|\           ')
         print('| |        / | \         ')
@@ -117,7 +135,7 @@ def printGallow(fails, word):
         print('_______________________ ')
         print('| _____________________|')
         print('| |  /      | |         ')
-        print('| | /      ( ツ )         ')
+        print('| | /     ( XoX )         ')
         print('| |/         |           ')
         print('| |         /|\           ')
         print('| |        / | \         ')
@@ -140,18 +158,36 @@ def printGallow(fails, word):
         print(' \____/\_| |_/\_|  |_/\____/ \___/  \___/\____/\_| \_|') 
         time.sleep(1)
         playAgain(words)       
+
+def winner(word):
+    print('\n' + word)
+    print('__   __          _    _ _    ')   
+    time.sleep(.1)
+    print('\ \ / /         | |  | (_)     ') 
+    time.sleep(.1)
+    print(' \ V /___  _   _| |  | |_ _ __  ')
+    time.sleep(.1)
+    print('  \ // _ \| | | | |/\| | | \'_ \ ')
+    time.sleep(.1)
+    print('  | | (_) | |_| \  /\  / | | | |')
+    time.sleep(.1)
+    print('  \_/\___/ \__,_|\/  \/|_|_| |_|')
+    time.sleep(1)
+    playAgain(words)
        
 def playAgain(words):
     answer = input('Play Again? (Y/N) ')
     if answer.upper() == 'Y':
         play(words)
-    else:
+    elif answer.upper() == 'N':
         sys.exit()
+    else:
+        playAgain(words)
 
 if __name__ == '__main__':
     
     words = []
-    dictionary = open('Hangman\dictionary.txt', 'r') 
+    dictionary = open('dictionary.txt', 'r') 
     for i in dictionary:
         words.append(i.upper())
     
