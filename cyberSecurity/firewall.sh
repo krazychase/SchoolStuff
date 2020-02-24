@@ -5,9 +5,8 @@ while [[ true ]]; do
     echo "
     -=-=-=-=-= FIREWALL EDITOR =-=-=-=-=-
     1 - Add rule
-    2 - Modify rule
-    3 - Delete rule
-    4 - Output Report
+    2 - Delete rule
+    3 - Output Report
     0 - Quit
     h - Help
     "
@@ -27,7 +26,7 @@ while [[ true ]]; do
         echo -n "Enter chain: "
         read chain
 
-        if [[ $chain == "help" ]]; then
+        if [[ ${chain^^} == "HELP" ]]; then
             echo "
 
             -= Help =-
@@ -65,14 +64,7 @@ while [[ true ]]; do
             echo "Done . . . "
         fi
 
-
     elif [[ $option == "2" ]]; then
-
-        echo "
-
-        -=-=-= Modify Rule =-=-=-
-        "
-    elif [[ $option == "3" ]]; then
 
         echo "
 
@@ -86,7 +78,7 @@ while [[ true ]]; do
         echo -n "Enter chain containing rule to delete: "
         read chain
 
-        if [[ $chain == "help" ]]; then
+        if [[ ${chain^^} == "HELP" ]]; then
             echo "
 
             -= Help =-
@@ -114,7 +106,7 @@ while [[ true ]]; do
         fi
 
 
-    elif [[ $option == "4" ]]; then
+    elif [[ $option == "3" ]]; then
 
         echo "
 
@@ -127,11 +119,23 @@ while [[ true ]]; do
         "
         exit 0
 
-    elif [[ $option == "h" ]]; then
+    elif [[ ${option^} == "H" ]]; then
 
         echo "
 
         -=-=-= Help =-=-=-
+        Iptables is used to set up, maintain, and inspect the tables of IP
+        packet filter rules in the Linux kernel. Several different tables
+        may be defined. Each table contains a number of built-in chains
+        and may also contain user-defined chains.
+
+        Each chain is a list of rules which can match a set of packets.
+        Each rule specifies what to do with a packet that matches.
+        This is called a 'target', which may be a jump to a 
+        user-defined chain in the same table. 
+
+        This tool aims to make the modification of these rules easier.
+        Simply follow the onscreen prompts to add, delete, and view rules.
         "
 
     else
