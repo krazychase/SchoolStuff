@@ -24,7 +24,7 @@ while [[ true ]]; do
         OUTPUT
         help
         "
-        echo -n "Enter chain (case sensitive): "
+        echo -n "Enter chain: "
         read chain
 
         if [[ $chain == "help" ]]; then
@@ -35,7 +35,7 @@ while [[ true ]]; do
             2 - FORWARD - This chain is used for incoming connections that aren’t actually being delivered locally.
             3 - OUTPUT - This chain is used for outgoing connections.
             "
-            echo -n "Enter chain (case sensitive): "
+            echo -n "Enter chain: "
             read chain
 
         fi
@@ -60,8 +60,8 @@ while [[ true ]]; do
         $preference connections from $chain $ipaddress? [y/n]:
         "
         read confirmation
-        if [[ confirmation == "y" ]] || [[ confirmation == "Y" ]]; then
-            iptables -A $chain -s $ipaddress -j $preference
+        if [[ ${confirmation^} == "Y" ]]; then
+            iptables -A ${chain^^} -s ${ipaddress^^} -j ${preference^^}
             echo "Done . . . "
         fi
 
@@ -77,7 +77,42 @@ while [[ true ]]; do
         echo "
 
         -=-=-= Delete Rule =-=-=-
+        INPUT
+        FORWARD
+        OUTPUT
+        help        
         "
+
+        echo -n "Enter chain containing rule to delete: "
+        read chain
+
+        if [[ $chain == "help" ]]; then
+            echo "
+
+            -= Help =-
+            1 - INPUT - This chain is used to control the behavior for incoming connections. 
+            2 - FORWARD - This chain is used for incoming connections that aren’t actually being delivered locally.
+            3 - OUTPUT - This chain is used for outgoing connections.
+            "
+            echo -n "Enter chain: "
+            read chain
+        fi
+
+        iptables -L ${chain^^} --line-numbers
+
+        echo -n "Enter rule number to delete: "
+        read rule
+
+        echo -n "
+        
+        Delete rule $rule from $chain? [y/n]:
+        "
+        read confirmation
+        if [[ ${confirmation^} == "Y" ]]; then
+            iptables -D ${chain^^} $rule
+            echo "Done . . . "
+        fi
+
 
     elif [[ $option == "4" ]]; then
 
