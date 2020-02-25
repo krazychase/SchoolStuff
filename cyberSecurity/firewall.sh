@@ -108,10 +108,9 @@ while [[ true ]]; do
 
     elif [[ $option == "3" ]]; then
 
-        echo "
-
-        Report outputted
-        "
+        cat > report.html <<- _EOF_
+    
+_EOF_
 
     elif [[ $option == "0" ]]; then
         echo "
