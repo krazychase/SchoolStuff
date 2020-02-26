@@ -108,9 +108,25 @@ while [[ true ]]; do
 
     elif [[ $option == "3" ]]; then
 
+        report="$(iptables -L)"
+
         cat > report.html <<- _EOF_
-    
+        <html>
+            <head>
+                <title>
+                    Iptables Report
+                </title>
+            </head>
+
+            <body>
+                <h1>Iptables Report</h1>
+                <p>${report}<p>
+            </body>
+        </html>
+
 _EOF_
+
+        echo "Report outputted"
 
     elif [[ $option == "0" ]]; then
         echo "
