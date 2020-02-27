@@ -108,9 +108,29 @@ while [[ true ]]; do
 
     elif [[ $option == "3" ]]; then
 
+        reportRaw="$(sudo iptables -L)"
+        report=""
+        while IFS= read -r line; do
+            report="$report $line <br>"
+        done <<< "$reportRaw"
+
         cat > report.html <<- _EOF_
-    
+<html>
+    <head>
+        <title>
+            Iptables Report
+        </title>
+    </head>
+
+    <body>
+        <h1>Iptables Report</h1>
+        <p><pre>$report<pre><p>
+    </body>
+</html>
+
 _EOF_
+
+        echo "Report outputted"
 
     elif [[ $option == "0" ]]; then
         echo "
