@@ -2,7 +2,7 @@
 # Client side copy file (sending)
 
 import socket
-
+import sys
 
 def copy(src):
     TCP_IP = '127.0.0.1'
@@ -24,7 +24,7 @@ def copy(src):
         data = s.recv(BUFFER_SIZE)
         s.close()
 
-        print(data.decode())  # echo
+        print(data.decode())  # comfirmation
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
