@@ -7,7 +7,7 @@ def copy(src, dest):
     with open(src,'rb') as source, open(dest,'wb') as destination:
         done = False
         while not done:
-            buf = source.read(1024)     # Read a kB at a time for speed
+            buf = source.read(4096)     # Read 4 kB at a time for speed
             if buf: 
                 destination.write(buf)
             else:
