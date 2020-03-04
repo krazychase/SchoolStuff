@@ -26,7 +26,7 @@ def copy(dest):
     conn.close()
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 1:
+    if len(sys.argv) > 1:
         copy(sys.argv[1])
     else:   
         dest = input('Destination file: ')
