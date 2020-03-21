@@ -1,0 +1,10 @@
+knob 1 - [176, 75, value]
+2 - [,71,]
+3 - [,91,]
+4 - [,93,]
+5 - [,73,]
+6 - [,72,]
+Mod Wheel - [,1,]
+Low C - [144(on) 128(off), 48(note), velocity] ... note increases by one per half step 
+High C - [,72,]
+Record button - [191, 118, 0-127]
