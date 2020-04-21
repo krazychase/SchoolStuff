@@ -1,0 +1,28 @@
+body{	
+	font-family: arial black;
+	background-color:black;
+	color:white;
+}
+h1, h3{
+	background-color:#2d2d2d;	
+	padding:25px;		
+}
+p{
+	margin:25px;
+}
+
+canvas { 
+	background: #eee; 
+	display: block; 
+	margin: 0 auto; 
+	}
+
+button {
+	display: block;
+	margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+	canvas { display: none; }
+	button {  display: none; }
+}

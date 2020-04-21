@@ -1,0 +1,169 @@
+<DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Chase Brown - Computer Science and Music</title>
+		<link href="css/index.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<h1>Welcome</h1>
+		<p>Here begins my adventure in Web Design and Development.</p>
+		<h3>Computer Science</h3>
+		<p>I am currently studying Computer Science here at <b>CMU</b>,
+		I have taken classes in: 
+		<ul type="square">
+			<li><i>Python</li> 
+			<li>C++</i></li> 
+			<li>and now <i>HTML, CSS, and JS</i></li>
+		</ul>
+		<p>I also have done a very small amount of bash scripting.</p>
+		<p>Here's <a href="page1.html">my first webpage</a>
+		and <a href="market.html">my farmer's market page</a>
+		and <a href="arngren.html">my ugly page</a>.</p>
+		
+		<!-- This disappears in mobile (and also doesn't work with mobile touch, but oh well . . . ) -->
+		<canvas id="myCanvas" width="480" height="320"></canvas>
+		<button onclick="play()">Play Breakout in JS</button>
+		
+		<script>
+		// I did use a tutorial to build this, but I changed a lot of stuff to make it more interesting!
+		function play(){
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			var x = canvas.width/2;
+			var y = canvas.height-30;
+			var dx = 3;
+			var dy = -3;
+			var ballRadius = 10;
+			var paddleHeight = 10;
+			var paddleWidth = 75;
+			var paddleX = (canvas.width-paddleWidth)/2;
+			var brickRowCount = 2;
+			var brickColumnCount = 5;
+			var brickWidth = 75;
+			var brickHeight = 20;
+			var brickPadding = 10;
+			var brickOffsetTop = 30;
+			var brickOffsetLeft = 30;	
+			var bricks = [];
+			for(var c=0; c<brickColumnCount; c++) {
+				bricks[c] = [];
+				for(var r=0; r<brickRowCount; r++) {
+					bricks[c][r] = { x: 0, y: 0, status: 1 };
+				}
+			}
+			var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+			var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+			var score = 0;
+			
+			document.addEventListener("mousemove", mouseMoveHandler, false);
+			
+			function collisionDetection() {
+				for(var c=0; c<brickColumnCount; c++) {
+					for(var r=0; r<brickRowCount; r++) {
+						var b = bricks[c][r];
+						if(b.status == 1) {
+							if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+								dy = -dy;
+								b.status = 0;
+								score += 100;
+								if(score == brickRowCount * brickColumnCount * 100) {
+									alert("WINNER!");
+									document.location.reload();	
+								}
+							}
+						}
+					}
+				}
+			}	
+			
+			function mouseMoveHandler(e) {
+			  var relativeX = e.clientX - canvas.offsetLeft;
+			  if(relativeX > 0 && relativeX < canvas.width) {
+				paddleX = relativeX - paddleWidth/2;
+			  }
+			}	
+			
+			function drawScore() {
+				ctx.font = "16px Impact";
+				ctx.fillStyle = "#0095DD";
+				ctx.fillText("Score: "+score, 8, 20);
+			}	
+			
+			function drawBall() {
+				ctx.beginPath();
+				ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+				ctx.fillStyle = "#0095DD";
+				ctx.fill();
+				ctx.closePath();
+			}
+			
+			function drawPaddle() {
+				ctx.beginPath();
+				ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+				ctx.fillStyle = "#00FF00";
+				ctx.fill();
+				ctx.closePath();
+			}
+			
+			function drawBricks() {
+				for(var c=0; c<brickColumnCount; c++) {
+					for(var r=0; r<brickRowCount; r++) {
+						if(bricks[c][r].status == 1) {
+							var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+							var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+							bricks[c][r].x = brickX;
+							bricks[c][r].y = brickY;
+							ctx.beginPath();
+							ctx.rect(brickX, brickY, brickWidth, brickHeight);
+							ctx.fillStyle = "#FF0000";
+							ctx.fill();
+							ctx.closePath();
+						}	
+					}
+				}
+			}
+
+			function draw() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				drawBricks();
+				drawBall();
+				drawPaddle();
+				drawScore();
+				collisionDetection();
+				if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+					dx = -dx;
+				}
+				if(y + dy < ballRadius) {
+					dy = -dy;
+				} else if(y + dy > canvas.height-ballRadius) {
+					if(x > paddleX && x < paddleX + paddleWidth) {
+						dy = -dy;
+					}
+					else {
+						alert("GAME OVER");
+						document.location.reload();
+					}
+				}
+				x += dx;
+				y += dy;
+				requestAnimationFrame(draw);
+			}
+			
+			draw();	
+		}
+		</script>
+
+		<h3>Music</h3>
+		<p>I also have <i>9+ years</i> of musical experience.
+		<p>I play percussion mostly, but I have an interest in learning more string instruments</p>
+		<p>I've spent 6 years playing in Marching Band Drumlines, first in high school, 
+		and now for the <a href="https://www.coloradomesa.edu/marching-band/">Maverick Stampede</a>.</p>
+		<p>Also, I played drumset in multiple jazz ensembles throughout the years.</p>
+		<p>Here's a picture of my pride and joy, a 2005 Harley Night Train.</p>
+		<img src = "images/nighttrain.jpg" hspace = 25 width = 600>
+		<hr>
+	</body>
+</html>

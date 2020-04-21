@@ -1,0 +1,19 @@
+
+                                      ***Action Table***
+                 letter     digit    period delimiter     blank       pod      eoln   illegal
+    new token         1         1         5         1         6         5         6         7
+ reserve word         1         1         4         8         2        10         2        11
+     variable         1         1         4         9         3        12         3        13
+      integer         9         1         1         9         3         4         3        13
+         real         9         1         4         9         3         4         3        13
+    delimiter         9         9         4        12         3         4         3        13
+
+                                               ***State Table***
+            |       letter       digit      period   delimiter       blank         pod        eoln     illegal
+--------------------------------------------------------------------------------------------------------------
+   new token| reserve word     integer   new token   delimiter   new token   new token   new token   new token
+reserve word| reserve word    variable   new token   delimiter   new token   new token   new token   new token
+    variable|     variable    variable   new token   delimiter   new token   new token   new token   new token
+     integer| reserve word     integer        real   delimiter   new token   new token   new token   new token
+        real| reserve word        real   new token   delimiter   new token   new token   new token   new token
+   delimiter| reserve word     integer   new token   new token   new token   new token   new token   new token

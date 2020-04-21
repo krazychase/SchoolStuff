@@ -1,0 +1,42 @@
+Step 1: Create 2 boxs and print dimensions of each
+Box 1
+The Object has the following dimensions: 
+Length = 0 inches
+Width = 0 inches
+Height = 0 inches
+
+Box 2
+The Object has the following dimensions: 
+Length = 5 inches
+Width = 7.5 inches
+Height = 3.625 inches
+
+Step 2: Set Dimensions of box 1
+New Box 1
+The Object has the following dimensions: 
+Length = 16.125 inches
+Width = 14.6 inches
+Height = 10 inches
+
+Step 3: Get Volume in cubic inches
+Box 1 volume = 2354.25 cubic inches
+Box 2 volume = 135.938 cubic inches
+
+Step 4: Get volume in cubic feet
+Box 1 volume = 196.188 cubic feet
+Box 2 volume = 11.3281 cubic feet
+
+Step 5: Get surface area in square inches
+Box 1 surface area = 1085.35 square inches
+Box 2 surface area = 165.625 square feet
+
+Step 6: Get surface area in square feet
+Box 1 surface area = 653.737 square feet
+Box 2 surface area = 96.875 square feet
+
+Step 7: Determine total surface area of boxs for wrapping paper
+Total wrapping paper needed = 750.612 square feet
+
+Step 8: Determine total volume of boxs for filling with soil
+Total amount of soil needed = 207.516 cubic feet
+
