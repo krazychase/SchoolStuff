@@ -8,3 +8,11 @@ Mod Wheel - [,1,]
 Low C - [144(on) 128(off), 48(note), velocity] ... note increases by one per half step 
 High C - [,72,]
 Record button - [191, 118, 0-127]
+
+pin 2 = up/down
+3 = left/right
+4 = in/out
+
+updown - 20-150 deg
+leftright - 0-180
+inout - 0-150
