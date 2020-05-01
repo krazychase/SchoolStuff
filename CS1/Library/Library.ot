@@ -1,0 +1,39 @@
+                                                   # of
+ID#  Title         Author       Genre     Price   Copies
+==========================================================
+123  Emma          Austen       Classic    23.95     2
+205  C++           Malik        Textbook  182.20    11
+234  MacBeth       Shakespeare  Classic    18.25     2
+318  It            King         Horror     33.48     1
+388  Algorithms    Corman       Textbook   65.97     1
+405  Calculus      Anton        Textbook  250.00     3
+455  Wyoming       Grey         Western    15.00     1
+525  Hamlet        Shakespeare  Classic    13.95     5
+662  Hondo         Lamour       Western     3.95     3
+777  Othello       Shakespeare  Classic    58.99     3
+902  Frankenstein  Shelley      Horror     25.38     2
+----------------------------------------------------------
+                                         3262.38    34
+
+                                                   # of
+ID#  Title         Author       Genre     Price   Copies
+==========================================================
+405  Calculus      Anton        Textbook  250.00     3
+123  Emma          Austen       Classic    23.95     2
+388  Algorithms    Corman       Textbook   65.97     1
+455  Wyoming       Grey         Western    15.00     1
+318  It            King         Horror     33.48     1
+662  Hondo         Lamour       Western     3.95     3
+205  C++           Malik        Textbook  182.20    11
+234  MacBeth       Shakespeare  Classic    18.25     2
+525  Hamlet        Shakespeare  Classic    13.95     5
+777  Othello       Shakespeare  Classic    58.99     3
+902  Frankenstein  Shelley      Horror     25.38     2
+----------------------------------------------------------
+                                         3262.38    34
+
+Classic  Horror  Textbook  Western
+-----------------------------------
+   4        2        3        2
+
+We have 3 titles by Shakespeare.

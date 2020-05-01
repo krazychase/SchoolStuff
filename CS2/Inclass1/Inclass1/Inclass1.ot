@@ -1,0 +1,12 @@
+Object has w = 1 l = 2
+Object has w = 2 l = 4
+Step 3A - Print x and y
+The playclass1 object has: length = 5.125 width = 3.05
+The playclass2 object has: length = 15.125 width = 21.375
+Step 3B - Print area of x and y
+Object x has area of 15.6312
+Object y has area of 323.297
+Step 3C - Change a
+Object a has area of 26.38
+Step 3D - change b
+Object b has area of 280.906

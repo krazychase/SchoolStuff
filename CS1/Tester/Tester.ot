@@ -1,0 +1,35 @@
+Step 1: Input Strings 
+How much wood would a wood chuck chuck, if a wood chuck could chuck wood?
+Rudolph, with your nose so bright, won't you guide my sleigh tonight?
+Over the river and through the woods, to grandmother's house we go.
+
+Step 2: Determine String Length: 
+String 1 Length: 73
+String 2 Length: 69
+String 3 Length: 67
+
+Step 3: Find position of ',' in each string:
+String 1 comma in position: 38
+String 2 comma in position: 7
+String 3 comma in position: 36
+
+Step 4: Find character 2 before comma:
+String 1 character: c
+String 2 character: p
+String 3 character: d
+
+Step 5: Get substring 2 after comma:
+if a wood chuck could chuck wood?
+with your nose so bright, won't you guide my sleigh tonight?
+to grandmother's house we go.
+
+Step 6: Delete comma:
+How much wood would a wood chuck chuck if a wood chuck could chuck wood?
+Rudolph with your nose so bright, won't you guide my sleigh tonight?
+Over the river and through the woods to grandmother's house we go.
+
+Step 7: Insert "CWH" where comma was
+How much wood would a wood chuck chuckCWH if a wood chuck could chuck wood?
+RudolphCWH with your nose so bright, won't you guide my sleigh tonight?
+Over the river and through the woodsCWH to grandmother's house we go.
+

@@ -1,0 +1,27 @@
+body{
+	background-color: #afa474;
+	text-align: center;
+}
+h1{
+	font-family: 'Sofia';
+	background-color: #76c16a;
+}
+h2, h3, h4, h5{
+	background-color: #76c16a;
+}
+p{
+	font-family: Comic Sans MS;
+}
+ol{
+	text-align: left;
+	font-family: Comic Sans MS;
+	list-style: inside;
+	list-style-type: decimal;
+	margin-left: 45%;
+}
+ul{
+	text-align: left;
+	font-family: Comic Sans MS;
+	list-style: inside;
+	margin-left: 45%;
+}

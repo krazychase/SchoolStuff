@@ -1,0 +1,6 @@
+reserveword integer newtoken delimiter newtoken newtoken newtoken newtoken
+reserveword variable newtoken delimiter newtoken newtoken newtoken newtoken
+variable variable newtoken delimiter newtoken newtoken newtoken newtoken
+reserveword integer real delimiter newtoken newtoken newtoken newtoken
+reserveword real newtoken delimiter newtoken newtoken newtoken newtoken
+reserveword integer newtoken newtoken newtoken newtoken newtoken newtoken

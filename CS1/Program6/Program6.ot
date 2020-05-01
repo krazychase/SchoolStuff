@@ -1,0 +1,45 @@
+       Name           Department                Salary
+===============================================================
+John Q. Smith         Exercise Science           46000
+Sally Jo T. Handle    Geology                    43500
+Jorge G. Martinez     Structual Engineering     127500
+Luke X. Skywalker     Astronomy                 500000
+Antonio M. Juarez     History                    40200
+Han D. Solo           Criminal Justice           48700
+Anna Mae L. Pine      Mathematics Education      45153
+Old M. Donald         Agriculture                35000
+Zaria Q. Sanderson    Computer Science           77220
+Jorge M. De La Rosa   Kinesiology               875234
+Santa X. Claus        Philanthropy             1000000
+---------------------------------------------------------------
+
+       Name           Department                Salary
+===============================================================
+Old M. Donald         Agriculture                35000
+Luke X. Skywalker     Astronomy                 500000
+Zaria Q. Sanderson    Computer Science           77220
+Han D. Solo           Criminal Justice           48700
+John Q. Smith         Exercise Science           46000
+Sally Jo T. Handle    Geology                    43500
+Antonio M. Juarez     History                    40200
+Jorge M. De La Rosa   Kinesiology               875234
+Anna Mae L. Pine      Mathematics Education      45153
+Santa X. Claus        Philanthropy             1000000
+Jorge G. Martinez     Structual Engineering     127500
+---------------------------------------------------------------
+
+       Name           Department                Salary
+===============================================================
+Claus Santa X.        Philanthropy             1000000
+De La Rosa Jorge M.   Kinesiology               875234
+Donald Old M.         Agriculture                35000
+Handle Sally Jo T.    Geology                    43500
+Juarez Antonio M.     History                    40200
+Martinez Jorge G.     Structual Engineering     127500
+Pine Anna Mae L.      Mathematics Education      45153
+Sanderson Zaria Q.    Computer Science           77220
+Skywalker Luke X.     Astronomy                 500000
+Smith John Q.         Exercise Science           46000
+Solo Han D.           Criminal Justice           48700
+---------------------------------------------------------------
+Total                                          2838507

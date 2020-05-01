@@ -1,0 +1,25 @@
+body{
+	background-color: #ffff99;
+}
+
+.title{
+	font-family: Arial;
+	color: #006600;
+	font-size: 24px;
+}
+p.title{
+	align: center;
+}
+span.title{
+	font-size: 36px;
+}
+img.title{
+	float: left;
+	margin-left: 37%
+}
+table{
+	font-family: Arial;
+	align: center;
+	text-align: center;
+	float: center;
+}

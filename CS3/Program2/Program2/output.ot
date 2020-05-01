@@ -1,0 +1,18 @@
+Universal set: 
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+Vowel set: 
+ A E I O U
+My Name set: 
+ A B C E H N O R S W
+Vowel union My Name: 
+ A B C E H I N O R S U W
+My Name intersect Vowel: 
+ A E O
+My Name difference Vowel: 
+ B C H N R S W
+
+Number of elements in My Name: 10
+Number of elements in Universal: 26
+
+My Name equals Vowel? False
+My Name equals My Name? True

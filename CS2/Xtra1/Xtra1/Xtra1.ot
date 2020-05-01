@@ -1,0 +1,4 @@
+List is empty
+
+//I got rid of the system errors, but it still warns me 
+//that main should be an int return function.
