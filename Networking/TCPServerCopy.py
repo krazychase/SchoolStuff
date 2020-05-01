@@ -9,17 +9,18 @@ def copy(dest):
     TCP_IP = '127.0.0.1'
     TCP_PORT = 5005
     BUFFER_SIZE = 4096
+    done = False
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((TCP_IP, TCP_PORT))
     s.listen()
 
     with open(dest,'wb') as destination:
-        while 1:
+        while not done:
             conn, addr = s.accept()
             data = conn.recv(BUFFER_SIZE)
             if not data: 
-                break
+                done = True
             destination.write(data)
     conn.send('File copied'.encode())  # comfirmation
     print('File copied')
