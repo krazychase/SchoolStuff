@@ -16,6 +16,8 @@ def copy(src):
         done = False
         while not done:
             buf = source.read(BUFFER_SIZE)
+            if not buf:
+                done = True
             s.send(buf)
 
 
