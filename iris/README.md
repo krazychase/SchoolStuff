@@ -9,9 +9,11 @@ Create and analyze multiple models for predicting iris species given the 4 featu
  - Support Vector Machines (SVMs)
  - Decision Trees
  - Random Forests
- - Perceptrons
+ - Perceptrons (this model was ultimatly chosen for the app as it is the only one that reached 100% accuracy)
  - Deep Neural Net
 
-`testModels.py` is used to generate models and create reports  
-`results.txt` contains classification reports on all models  
-`\models` contains all the serialized trained models (Note: dnn can't be pickled, so it is saved using kera's model.save() function)  
+`irisIdentifier.py` is the actual application to identify iris species given 4 features. Just run the file, insuring you have SKlearn installed (pip install sklearn).  
+Some sample data to try is [5.1, 3.5, 1.4, 0.2] (a setosa), [6.7, 3.1, 4.4, 1.4] (a versicolor), and [5.9, 3.0, 5.1, 1.8] (a virginica).  
+`testModels.py` is used to generate models and create reports.  
+`results.txt` contains classification reports on all models.  
+`\models` contains all the serialized trained models (Note: dnn can't be pickled, so it is saved using kera's model.save() function).  
