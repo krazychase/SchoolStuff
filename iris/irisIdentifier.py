@@ -4,6 +4,7 @@ Chase Brown
 '''
 
 # from keras.models import load_model		# Loading dnn
+from pathlib import Path					# Cross platform pathing
 import pickle								# Loading trained models
 from sklearn.datasets import load_iris		# Iris dataset
 from tkinter import *						# GUI
@@ -79,14 +80,14 @@ class MainPage(Frame):
 
 		### Load trained models
 		self.dataset = load_iris()
-		# self.knn = pickle.load(open('iris\\models\\knn.sav' , 'rb'))
-		# self.naive_bayes = pickle.load(open('iris\\models\\naive_bayes.sav' , 'rb'))
-		# self.logit = pickle.load(open('iris\\models\\logit.sav' , 'rb'))
-		# self.svm = pickle.load(open('iris\\models\\svm.sav' , 'rb'))
-		# self.decision_tree = pickle.load(open('iris\\models\\decision_tree.sav' , 'rb'))
-		# self.random_forest = pickle.load(open('iris\\models\\random_forest.sav' , 'rb'))
-		self.mlp = pickle.load(open('iris\\models\\mlp.sav' , 'rb'))		# Using mlp since it is the only model to have 100% accuracy in tests
-		# self.dnn = load_model('iris\\models\\dnn')
+		# self.knn = pickle.load(open(Path('iris/models/knn.sav') , 'rb'))
+		# self.naive_bayes = pickle.load(open(Path('iris/models/naive_bayes.sav') , 'rb'))
+		# self.logit = pickle.load(open(Path('iris/models/logit.sav') , 'rb'))
+		# self.svm = pickle.load(open(Path('iris/models/svm.sav') , 'rb'))
+		# self.decision_tree = pickle.load(open(Path('iris/models/decision_tree.sav') , 'rb'))
+		# self.random_forest = pickle.load(open(Path('iris/models/random_forest.sav') , 'rb'))
+		self.mlp = pickle.load(open(Path('iris/models/mlp.sav') , 'rb'))		# Using mlp since it is the only model to have 100% accuracy in tests
+		# self.dnn = load_model(Pth('iris/models/dnn'))
 
 	def identify(self):
 		sl = self.slForm.get()

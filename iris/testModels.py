@@ -4,6 +4,7 @@ Output to results file
 Chase Brown
 '''
 
+from pathlib import Path								# Cross platform pathing
 import pickle											# Saving trained models
 from sklearn.neighbors import KNeighborsClassifier		# Specific models
 from sklearn.naive_bayes import GaussianNB
@@ -36,7 +37,7 @@ print('Loading data...')
 dataset = load_iris()																				# Get iris data (comes with sklearn)
 trainX, testX, trainY, testY = train_test_split(dataset.data, dataset.target, random_state=3)		# Split and shuffle data (75% for training, 25% for testing)
 
-with open('iris\\results.txt', 'w') as file:
+with open(Path('iris/results.txt'), 'w') as file:
 	for model in models:																			# Normal machine learing models
 		print(f'Training using {model}...')
 		m = models[model]
@@ -46,7 +47,7 @@ with open('iris\\results.txt', 'w') as file:
 		predictions = m.predict(testX)																# Predict y data using model and testX
 		file.write(f'\n\n{model} report:\n')
 		file.write(classification_report(testY, predictions, target_names=dataset.target_names))	# Compare prediction with actual testY data, write report
-		pickle.dump(m, open(f'iris\\models\\{model}.sav', 'wb'))													# Save model
+		pickle.dump(m, open(Path(f'iris/models/{model}.sav'), 'wb'))													# Save model
 
 
 	# Deep Neural Network model (I don't totally understand this one yet, lots of stuff happening in the background with TensorFlow and such)
@@ -68,4 +69,4 @@ with open('iris\\results.txt', 'w') as file:
 	predictions = model.predict(testX, batch_size=16)
 	file.write(f'\n\nDeep Neural Network report:\n')
 	file.write(classification_report(testY.argmax(axis=1), predictions.argmax(axis=1), target_names=dataset.target_names))
-	model.save('iris\\models\\dnn')
+	model.save(Path('iris/models/dnn'))
