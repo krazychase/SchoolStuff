@@ -19,7 +19,10 @@ class Program(Tk):
 		# Window Setup
 		self.title('Iris Identifier')
 		self.configure(background = 'blue')
-		self.wm_state('zoomed')
+		try:
+			self.state('zoomed')
+		except:
+			self.attributes('-zoomed', True)
 
 		# Setup widgets
 		titleLabel = Label(self, text = ' Iris Identifier ', background = '#006FFF', font = ('Arial', 48, 'bold'), fg = 'white', relief = RAISED)
