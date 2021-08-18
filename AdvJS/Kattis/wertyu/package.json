@@ -1,0 +1,14 @@
+{
+  "name": "wertyu",
+  "version": "1.0.0",
+  "description": "kattis problem",
+  "main": "wertyu.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Chase Brown",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
